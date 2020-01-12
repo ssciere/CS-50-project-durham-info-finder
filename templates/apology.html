@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Durham Info Lookup
+    Apology
 {% endblock %}
 
 {% block main %}
@@ -11,6 +11,6 @@
             <input class="form-control" name="address" placeholder="address" type="text">
        </div>
         <button class="btn btn-primary" type="submit">get info</button>
-    </form>
-
+    </form>    <br>
+  {{ error }}
 {% endblock %}

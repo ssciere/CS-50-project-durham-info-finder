@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    results
+{% endblock %}
+
+{% block main %}
+
+ <h4> {{session["all_results"].home_address}}</h4>
+   <br>
+    <h4>Utilities</h4>
+       <b>Electric</b> - <a href="{{session["all_results"].electCompURL }}" target=_blank>Duke Energy</a> {{session["all_results"].electCompPhone }}<br>
+       <b>Water</b> - <a href="{{session["all_results"].waterURL }}" target=_blank>Durham Water Connection</a> {{session["all_results"].waterPhone }} or in person at {{session["all_results"].waterAddress }}<br>
+       <b>Gas</b> - <a href="{{session["all_results"].gasCompURL }}" target=_blank>{{session["all_results"].gasCompName }}</a> {{session["all_results"].gasCompPhone }}<br>
+       <b>Internet</b> - <a href="{{session["all_results"].internetURL }}" target=_blank>{{session["all_results"].internetLookupSite }}</a><br>
+       <b>TV</b> - <a href="{{session["all_results"].TVURL }}" target=_blank>{{session["all_results"].TVLookupSite }}</a><br>
+   <br>
+
+    <h4>Nearest Hospital</h4>
+    <b> {{session["all_results"].hos_name }}</b> <br>
+    {{session["all_results"].hos_address }} <br>
+    {{session["all_results"].hos_phone }}<br><br>
+
+    <h4>Nearest Library</h4>
+    <b>{{session["all_results"].lib_name }}</b> <br>
+    {{session["all_results"].lib_address }} <br>
+    {{session["all_results"].lib_phone }}<br><br>
+
+    <h4>We're sorry you didn't like our suggested business.  Here's another!</h4>
+    <b> {{ session["all_results"].place_name }}</b> <br>
+    {{ session["all_results"].place_address }} <br>
+        <br><br>
+            <a href = "/">Search another location</a>
+    <br>
+{% endblock %}
+
